@@ -128,7 +128,8 @@
                                 <p class="card-text text-muted">Once the words are numbers, they enter the "Transformer"
                                     brain. Here, the AI uses an ingenious mechanism called
                                     <strong>Self-Attention</strong>. It mathematically connects every word to every
-                                    other word in the sentence to figure out the context.</p>
+                                    other word in the sentence to figure out the context.
+                                </p>
                                 <p class="card-text small text-secondary"><em>Example: If it sees the word "Bank", it
                                         scans nearby words to figure out if you mean a River Bank or a Money Bank.</em>
                                 </p>
@@ -147,7 +148,8 @@
                                 <p class="card-text text-muted">At its core, all AI like ChatGPT or YamLLM is just a
                                     highly advanced autocomplete. Once it understands the context of what you've typed,
                                     it rolls a trillion-sided mathematical die to guess the statistically most likely
-                                    <strong>next single word</strong>.</p>
+                                    <strong>next single word</strong>.
+                                </p>
                                 <p class="card-text small text-secondary"><em>Example: If you type "The sky is", it
                                         calculates that "blue" is a 99% probability.</em></p>
                             </div>
@@ -286,9 +288,10 @@
                         <li><i class="bi bi-x text-danger me-2"></i><strong>Hardware Intensive:</strong> While the
                             "nano" config runs on a CPU, training a commercially viable LLM with this framework requires
                             expensive, multi-GPU clusters.</li>
-                        <li><i class="bi bi-x text-danger me-2"></i><strong>Not a Production API:</strong> This is a
-                            PyTorch training framework, not a production-ready HTTP inference server (like vLLM or
-                            Ollama).</li>
+                        <li><i class="bi bi-x text-danger me-2"></i><strong>Speed vs. Production Engines:</strong> While
+                            YamLLM has a built-in REST API mimicking Ollama, it relies on raw PyTorch. It lacks the
+                            ultra-advanced optimization kernels (like Continuous Batching or PagedAttention) found in
+                            massive C++ engines like vLLM.</li>
                     </ul>
                 </div>
             </div>

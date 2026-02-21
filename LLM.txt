@@ -1,0 +1,35 @@
+You must build:
+
+Tokenizer
+
+Transformer architecture
+
+Training pipeline
+
+Dataset pipeline
+
+Distributed training (if large)
+
+Evaluation system
+
+
+
+
+
+
+Custom LLM Engineering Task Breakdown
+ Planning: Define architecture and project structure.
+ Setup Engine: Create project directories and infrastructure files (requirements.txt, .gitignore).
+ Tokenizer Module: Implement the BPE tokenizer structure in src/tokenizer.
+ Model Architecture:
+ Implement configurations (src/utils/config.py).
+ Implement self-attention mechanism (src/model/attention.py).
+ Implement transformer layers block (src/model/layers.py).
+ Implement full GPT-style model (src/model/transformer.py).
+ Data Pipeline: Implement dataset loading and tokenization logic (src/data/dataset.py).
+ Training Engine:
+ Implement the training loop, loss calculation, and optimization (src/training/trainer.py).
+ Add DDP/FSDP scaffolding for distributed tracking (src/training/distributed.py).
+ Evaluation System: Implement metrics and validation tests (src/evaluation/evaluator.py).
+ Entrypoints: Create scripts/train.py and scripts/evaluate.py.
+ Testing & Verification: Create pytest suites and verify training loop correctness.

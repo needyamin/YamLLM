@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YamLLM: Custom PyTorch Framework</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #2a5298;
+            margin-bottom: 15px;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        code {
+            background-color: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #d63384;
+        }
+
+        .code-block {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .pro-con-list li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">YamLLM Framework</h1>
+            <p class="lead mb-4">A professional, modular, and scratch-built Large Language Model ecosystem engineered in
+                PyTorch.</p>
+            <a href="#getting-started" class="btn btn-light btn-lg px-4 gap-3">Get Started <i
+                    class="bi bi-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+
+        <!-- About Project -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold mb-4">About This Project</h2>
+                <p class="text-muted lead">
+                    This project is a clean-room implementation of a GPT-style, decoder-only Transformer built from the
+                    ground up. It includes every component necessary to train a massive AI model: from raw byte-pair
+                    encoding (BPE) tokenization, to complex multi-head causal self-attention pathways, down to
+                    distributed data parallel (DDP) training loop foundations.
+                </p>
+            </div>
+        </div>
+
+        <!-- Benefits/Features grid -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-cpu feature-icon"></i>
+                        <h4 class="card-title fw-bold">Modular Architecture</h4>
+                        <p class="card-text text-muted">Separated modules for Tokens, Models, Data, and Training make it
+                            incredibly easy to study, modify, and extend the architecture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-lightning-charge feature-icon"></i>
+                        <h4 class="card-title fw-bold">Flash Attention Ready</h4>
+                        <p class="card-text text-muted">Utilizes PyTorch's native functional
+                            <code>scaled_dot_product_attention</code> for highly optimized, memory-efficient causal
+                            masking during training.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-diagram-3 feature-icon"></i>
+                        <h4 class="card-title fw-bold">Full Control</h4>
+                        <p class="card-text text-muted">No hidden abstractions or massive wrapper libraries. You control
+                            every matrix multiplication, loss calculation, and weight update.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Use -->
+        <div class="row mb-5" id="getting-started">
+            <div class="col-lg-10 mx-auto">
+                <div class="card p-4 p-md-5">
+                    <h2 class="fw-bold mb-4">How to Use the Framework</h2>
+
+                    <h5>1. Environment Setup</h5>
+                    <p>Ensure you have Python installed and set up a virtual environment. Install dependencies:</p>
+                    <div class="code-block mb-4">
+                        pip install -r requirements.txt
+                    </div>
+
+                    <h5>2. Train the Model</h5>
+                    <p>Run the training script. By default, this uses a "Nano" configuration which trains a tiny model
+                        on a dummy text dataset so you can instantly verify the pipeline works on any hardware.</p>
+                    <div class="code-block mb-4">
+                        python scripts/train.py
+                    </div>
+                    <p class="text-muted small"><i class="bi bi-info-circle"></i> Once completed, the learned weights
+                        and tokenizer are saved to the <code>checkpoints/</code> directory.</p>
+
+                    <h5>3. Evaluate and Generate text</h5>
+                    <p>Load your newly trained weights and start generating text interactively!</p>
+                    <div class="code-block mb-4">
+                        python scripts/evaluate.py
+                    </div>
+
+                    <h5>4. Run as an API Server (Like Ollama/vLLM)</h5>
+                    <p>You can serve the trained model as a REST API to build applications on top of it:</p>
+                    <div class="code-block mb-4">
+                        python scripts/api.py
+                    </div>
+                    <p class="text-muted small"><i class="bi bi-info-circle"></i> Once running, simply POST to
+                        <code>http://localhost:8000/v1/completions</code> with a JSON body
+                        <code>{"prompt": "Hello", "max_tokens": 50}</code>.
+                    </p>
+
+                    <h5>5. Scale Up</h5>
+                    <p>To train a real-world level model, edit <code>scripts/train.py</code> to use the standard
+                        <code>LLMConfig()</code>, and pass a massive text dataset (like WebText or Wikipedia) into the
+                        Tokenizer and DataLoader.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pros and Cons -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card p-4 border-success" style="border-top: 4px solid #198754;">
+                    <h3 class="fw-bold text-success mb-4"><i class="bi bi-check-circle-fill me-2"></i>Pros</h3>
+                    <ul class="list-unstyled pro-con-list">
+                        <li><i class="bi bi-check2 text-success me-2"></i><strong>Deeply Educational:</strong> The
+                            absolute best way to understand how GPT models actually work under the hood.</li>
+                        <li><i class="bi bi-check2 text-success me-2"></i><strong>Extremely Lightweight:</strong> Zero
+                            bloatware. The codebase only includes exactly what is mathematically necessary to train the
+                            transformer.</li>
+                        <li><i class="bi bi-check2 text-success me-2"></i><strong>Highly Customizable:</strong> Change
+                            activation functions (GELU, SwiGLU), positional encodings (RoPE), or layer normalization
+                            (RMSNorm) simply by editing a few lines of raw torch.</li>
+                        <li><i class="bi bi-check2 text-success me-2"></i><strong>PyTorch Native:</strong> Leverages the
+                            standard deep learning library without proprietary abstractions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card p-4 border-danger" style="border-top: 4px solid #dc3545;">
+                    <h3 class="fw-bold text-danger mb-4"><i class="bi bi-x-circle-fill me-2"></i>Cons</h3>
+                    <ul class="list-unstyled pro-con-list">
+                        <li><i class="bi bi-x text-danger me-2"></i><strong>No Pre-trained Weights:</strong> This is an
+                            *engine* to train a model, not a pre-trained intelligence. It knows nothing until you feed
+                            it a massive dataset.</li>
+                        <li><i class="bi bi-x text-danger me-2"></i><strong>Hardware Intensive:</strong> While the
+                            "nano" config runs on a CPU, training a commercially viable LLM with this framework requires
+                            expensive, multi-GPU clusters.</li>
+                        <li><i class="bi bi-x text-danger me-2"></i><strong>Not a Production API:</strong> This is a
+                            PyTorch training framework, not a production-ready HTTP inference server (like vLLM or
+                            Ollama).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">YamLLM Framework &copy; 2026. Built with PyTorch and Bootstrap 5.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.css"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

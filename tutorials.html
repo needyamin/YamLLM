@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YamLLM: গাইডলাইন এবং টিউটোরিয়াল</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: white;
+            padding: 80px 0;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #2c5364;
+            border-bottom: 3px solid #dc3545;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        .feature-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            border-left: 5px solid #203a43;
+        }
+
+        .feature-box h4 {
+            color: #203a43;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge-custom {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">YamLLM গাইডলাইন এবং টিউটোরিয়াল</h1>
+            <p class="lead mb-4">আপনার নিজস্ব লার্জ ল্যাঙ্গুয়েজ মডেল (LLM) তৈরি, বুঝতে এবং ডেভেলপ করার জন্য সম্পূর্ণ
+                বাংলা গাইডলাইন।</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+
+        <!-- About Project -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">প্রজেক্ট সম্পর্কে (About YamLLM)</h2>
+                <div class="feature-box">
+                    <p class="lead text-muted">
+                        <strong>YamLLM</strong> হলো একেবারে শুরু (scratch) থেকে তৈরি করা একটি <strong>Large Language
+                            Model (LLM) ইকোসিস্টেম</strong>, যা <strong>PyTorch</strong> দিয়ে বানানো হয়েছে। এটি মূলত
+                        একটি <strong>GPT-স্টাইল ডিকোডার-অনলি ট্রান্সফর্মার (Decoder-only Transformer)</strong>।
+                    </p>
+                    <p>এই প্রজেক্টে টোকেনাইজার (BPE Tokenizer) থেকে শুরু করে মডেল ট্রেইনিং, অ্যাডভান্সড মনোযোগ মেকানিজম
+                        (Multi-Head Causal Self-Attention) এবং ডিস্ট্রিবিউটেড ট্রেইনিং লুপ- সবকিছুই মডুলার আকারে খুব
+                        সুন্দর করে সাজানো আছে।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- What to Learn -->
+        <div class="row mb-5">
+            <div class="col-lg-6">
+                <h2 class="section-title">প্রজেক্টটি বুঝতে যা যা শিখতে হবে</h2>
+
+                <div class="feature-box">
+                    <h4>১. Python Programming (পাইথন প্রোগ্রামিং)</h4>
+                    <p>কোডবেসটি পুরোটা পাইথনে লেখা। তাই পাইথনের বেসিক, <strong>Object-Oriented Programming
+                            (OOP)</strong> এবং স্ক্রিপ্টিং খুব ভালোভাবে বুঝতে হবে।</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>২. PyTorch Framework (পাইটরচ)</h4>
+                    <p>পাইটরচের <code>torch.nn</code> মডিউল, <strong>Tensors</strong> কীভাবে কাজ করে,
+                        <strong>Autograd</strong> এবং <strong>Optimizers</strong> সম্পর্কে সুস্পষ্ট ধারণা থাকা
+                        বাধ্যতামূলক।</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>৩. Transformers Architecture</h4>
+                    <p>GPT কিভাবে কাজ করে তা বুঝতে হবে। বিশেষ করে <strong>Self-Attention Mechanism</strong>,
+                        <strong>Causal Masking</strong>, <strong>Layer Normalization</strong> এবং <strong>FeedForward
+                            Networks</strong>-এর জ্যামিতিক ও গাণিতিক ধারণা প্রয়োজন।</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>৪. Natural Language Processing (NLP)</h4>
+                    <p>বেসিক এনএলপি, বিশেষ করে <strong>Word Embeddings</strong> এবং <strong>Byte-Pair Encoding (BPE)
+                            Tokenization</strong> কীভাবে টেক্সটকে নাম্বারে রূপান্তর করে তা জানা জরুরি।</p>
+                </div>
+            </div>
+
+            <!-- Next Level Development -->
+            <div class="col-lg-6">
+                <h2 class="section-title">পরবর্তী ধাপে উন্নয়নের জন্য যা শিখতে হবে</h2>
+
+                <div class="feature-box" style="border-left-color: #dc3545;">
+                    <h4 style="color: #dc3545;">১. Distributed Training (DDP)</h4>
+                    <p>সত্যিকারের বড় মডেল ট্রেইন করতে গেলে একটি GPU দিয়ে হয় না। তাই <strong>Distributed Data Parallel
+                            (DDP)</strong> এর মাধ্যমে একাধিক GPU-তে মডেল ট্রেইন করার আর্কিটেকচার সম্পর্কে অ্যাডভান্স
+                        লেভেলের পড়াশোনা প্রয়োজন।</p>
+                </div>
+
+                <div class="feature-box" style="border-left-color: #dc3545;">
+                    <h4 style="color: #dc3545;">২. Advanced Optimization Techniques</h4>
+                    <p>মডেল যাতে মেমরি কম নেয় এবং দ্রুত ট্রেইন হয়, সেজন্য <strong>Flash Attention</strong> এবং
+                        <strong>Mixed Precision Training (fp16, bf16)</strong> নিয়ে কাজ করা শিখতে হবে।</p>
+                </div>
+
+                <div class="feature-box" style="border-left-color: #dc3545;">
+                    <h4 style="color: #dc3545;">৩. Large Dataset Processing</h4>
+                    <p>WebText বা Wikipedia এর মত বিশাল সাইজের ডেটাসেট কীভাবে দক্ষতার সাথে মেমরিতে
+                        <strong>DataLoader</strong> এর সাহায্যে লোড ও প্রসেস করতে হয়, সেই ইঞ্জিনিয়ারিং শিখতে হবে।</p>
+                </div>
+
+                <div class="feature-box" style="border-left-color: #dc3545;">
+                    <h4 style="color: #dc3545;">৪. API Server Deployment</h4>
+                    <p>মডেল রেডি হওয়ার পর তাকে FastAPI বা Flask দিয়ে প্রোডাকশন-রেডি API (যেমন Ollama বা vLLM-এর মতো)
+                        হিসেবে কীভাবে ডিপ্লয় করতে হয়, সেটি শিখতে হবে।</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step by Step Tutorial -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h2 class="section-title">সম্পূর্ণ টিউটোরিয়াল গাইডলাইন (Step-by-Step)</h2>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><span class="badge-custom">ধাপ ১</span> এনভায়রনমেন্ট সেটআপ (Environment Setup)
+                        </h4>
+                        <p>প্রথমে পাইথন ইন্সটল করে একটি ভার্চুয়াল এনভায়রনমেন্ট তৈরি করুন এবং প্রয়োজনীয় লাইব্রেরিগুলো
+                            ইন্সটল করে নিন:</p>
+                        <div class="code-block">
+                            pip install -r requirements.txt
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><span class="badge-custom">ধাপ ২</span> প্রজেক্টের স্ট্রাকচার এক্সপ্লোর করা
+                            (Explore project structure)</h4>
+                        <p>আপনার পুরো প্রজেক্টটি খুব সুন্দর ভাবে সাজানো আছে:</p>
+                        <ul>
+                            <li><code>src/tokenizer/</code>: টেক্সট থেকে নাম্বার বা টোকেন বানায়।</li>
+                            <li><code>src/model/</code>: এখানে মূল ট্রান্সফর্মার মডেল এবং নিউরাল নেটওয়ার্ক লেয়ারগুলো
+                                আছে।</li>
+                            <li><code>src/training/</code>: মডেলকে কিভাবে ধাপে ধাপে শেখাতে হবে (ট্রেইনিং লুপ) তা এখানে
+                                আছে।</li>
+                            <li><code>scripts/</code>: এই ফোল্ডার থেকে মডেল ট্রেইন বা টেস্ট করার স্ক্রিপ্ট চালানো হয়।
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><span class="badge-custom">ধাপ ৩</span> মডেল ট্রেইনিং শুরু করা (Start Training)
+                        </h4>
+                        <p>প্রথম প্রথম আপনার পিসির শক্তি অনুযায়ী একটি ছোট (Nano) কনফিগারেশন দিয়ে মডেলটিকে ট্রেইন করতে
+                            দিন। নিজে নিজে বুঝার জন্য এটি সবচেয়ে ভালো উপায়।</p>
+                        <div class="code-block">
+                            python scripts/train.py
+                        </div>
+                        <p class="text-muted small">ট্রেইনিং শেষ হলে ওজন বা ওয়েট (weights) গুলো `checkpoints/` ফোল্ডারে
+                            সেভ হবে।</p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><span class="badge-custom">ধাপ ৪</span> মডেল ইভ্যালুয়েশন এবং টেক্সট জেনারেট
+                            (Evaluation & Generation)</h4>
+                        <p>ট্রেইনিং এর পর মডেলটি কেমন কাজ করছে এবং সে নিজে থেকে টেক্সট জেনারেট করতে পারছে কি না, তা
+                            টেস্ট করার জন্য কমান্ড দিন:</p>
+                        <div class="code-block">
+                            python scripts/evaluate.py
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4">
+                        <h4 class="mb-3"><span class="badge-custom">ধাপ ৫</span> এপিআই সার্ভার রান করানো (Run API
+                            Server)</h4>
+                        <p>আপনি যদি আপনার এই মডেলটিকে একটি ওয়েবসাইট বা অ্যাপের সাথে যুক্ত করতে চান, তবে এটিকে একটি API
+                            সার্ভার হিসেবে রান করতে হবে।</p>
+                        <div class="code-block">
+                            python scripts/api.py
+                        </div>
+                        <p>এর পর আপনি <code>http://localhost:8000/v1/completions</code> লিঙ্কে JSON বডি (যেমন:
+                            <code>{"prompt": "Hello", "max_tokens": 50}</code>) রিকোয়েস্ট পাঠালে আপনার মডেল উত্তর দেবে!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-4">
+                    <div class="card-body p-4 bg-light">
+                        <h4 class="mb-3 text-success"><i class="bi bi-lightbulb"></i> টিপস (পরবর্তী লেভেলের জন্য)</h4>
+                        <p>ভবিষ্যতে সত্যিকারের এআই মডেল বানাতে হলে <code>scripts/train.py</code> ফাইলে গিয়ে
+                            <strong>LLMConfig()</strong> পরিবর্তন করতে হবে। এরপর Wikipedia বা WebText এর বিশাল ডেটাসেট
+                            দিয়ে মডেলকে মাসের পর মাস বড় কোন GPU সার্ভারে ট্রেইন করাতে হবে।</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">YamLLM Framework &copy; Learning Guidelines Developed for User. Built with PyTorch and
+                Bootstrap 5.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
